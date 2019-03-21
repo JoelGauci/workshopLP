@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest name="manifest">
+    <Policies>
+        <VersionInfo resourceName="Add-CORS" version="SHA-512:651ec58f3452ad429cc3b98e40d387c9ace74beae08979113e2dea0175a3b9f8b7df8ae758db076f6e8d7b2dfab77a12be033a01975637008c8a603a5532ef36"/>
+        <VersionInfo resourceName="AssignMessageSetOAuthExternalAuthorizationStatus" version="SHA-512:fe557b2078cd4cf88d34b854dc6bf6f419a0e9c87fffca0c25ef36d257d3b3249b0b8af3d6337265424eb5e73f9e102b66bd11176fc5b87e4f1c8c24ef5be9c4"/>
+        <VersionInfo resourceName="ExtractVariablesAccessToken" version="SHA-512:256c751e4a420a5f88f61353774a0dc73e7d816a6d501f35d8a3edacaaaaeb37b4f0ca3c190a0d330fdd9aa40f4bb581b7897103a8a3ee50165939c77e1287fc"/>
+        <VersionInfo resourceName="JavaScript-SetTokenType" version="SHA-512:eab06af6d17285cbcb717c2bff239f461ba3224af6f487debef0ba2a47f4be43e4b6f2cad1c0b165ade6210cbaabc31eb44fea8157aef7cf3f970edfe2ac5777"/>
+        <VersionInfo resourceName="OAuthv20GenerateAccessToken" version="SHA-512:7ef5bb59387b6e9250b266584d07c384527a57df35aa7c331961729829bdfe0e49fc7d8378cb247630173d9146f4ec5d2fd218f9c64c0343f8fe5d0f6a761d0b"/>
+        <VersionInfo resourceName="ServiceCalloutGetAccessToken" version="SHA-512:11da60d671c02d93e245d7e78a8ce0156b85dc152c038711d3c30bb9b5555a151103777befc308b876109c8aad08ca7f12b818c9d363f0dcd0e6413b84e4e720"/>
+    </Policies>
+    <ProxyEndpoints>
+        <VersionInfo resourceName="default" version="SHA-512:a0b67a2feb55624ea4db08c4978629b45f7eb2729cb254957cd1c538d9b91ccfb32e1b2f829d7b081b517af1ba34efe327a84fdf7622277c34a1e67d262ef0dc"/>
+    </ProxyEndpoints>
+    <Resources>
+        <VersionInfo resourceName="jsc://JavaScript-SetTokenType.js" version="SHA-512:a6df30ac4d91159b7b8acd505508e37fce131778165940c51bf5605531050ebb1855b274bd7e8e2d289a1cb7205823c30c87b2e098df0de8bb8a73d19953111c"/>
+    </Resources>
+    <SharedFlows/>
+    <TargetEndpoints/>
+</Manifest>

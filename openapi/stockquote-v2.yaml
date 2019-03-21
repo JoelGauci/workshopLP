@@ -1,0 +1,132 @@
+swagger: "2.0"
+info:
+  title: StockQuote API - v2
+  version: 2.0.0
+  description: Stock Quote API
+
+schemes:
+  - https
+
+securityDefinitions:
+  oauthClientCredentials:
+    type: oauth2
+    description: 'oauth20 client credentials'
+    flow: application
+    scopes:
+      default: ''
+      am_application_scope: ''
+    tokenUrl: 'https://emea-poc8-test.apigee.net/v1/token'
+
+host: emea-poc8-test.apigee.net
+
+basePath: /v2/stockquote
+
+paths:
+  # /{symbol} - example: /GOOG
+  /{symbol}:
+    get:  #GET
+      description: returns stock quote for GAFAM
+      parameters:
+        - name: symbol
+          in: path
+          required: true
+          type: string
+      produces:
+        - "application/json"
+      security:
+        - oauthClientCredentials:
+          - default
+          - am_application_scope
+      responses:
+        200:
+          description: response OK
+          schema:
+            $ref: "#/definitions/stockQuotes"
+    
+    delete: #DELETE
+      description: delete a symbol
+      parameters:
+        - name: symbol
+          in: path
+          required: true
+          type: string
+      security:
+        - oauthClientCredentials:
+          - default
+          - am_application_scope
+      responses:
+        204:
+          description: content deleted
+
+  # / - example: /     
+  /:    
+    post: #POST
+      description: create a new symbol
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        # An example parameter that is in query and is required
+        - name: body
+          in: body
+          description: stock quote symbol body
+          required: true
+          schema:
+            $ref: "#/definitions/stockQuote"
+      
+      security:
+        - oauthClientCredentials:
+          - default
+          - am_application_scope
+      
+      responses:
+        200:
+          description: Successful response
+          # A schema describing your response object.
+          # Use JSON Schema format
+          schema:
+            $ref: "#/definitions/stockQuote"
+          
+    
+#Definitions     
+definitions:
+  stockQuote:
+    type: object
+    properties:
+      symbol:
+        type: string
+      name:
+        type: string
+      last:
+        type: number
+        format: float
+      low:
+        type: number
+        format: float
+      high:
+        type: number
+        format: float
+        
+  stockQuotes:
+    type: object
+    properties:
+      stocks:
+        type: array
+        description: stock quote information
+        items:
+          type: object
+          properties:
+            symbol:
+              type: string
+            name:
+              type: string
+            last:
+              type: number
+              format: float
+            low:
+              type: number
+              format: float
+            high:
+              type: number
+              format: float

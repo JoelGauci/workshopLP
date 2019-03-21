@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AssignMessageSetOAuthExternalAuthorizationStatus">
+    <DisplayName>AssignMessage.SetOAuthExternalAuthorizationStatus</DisplayName>
+    <AssignVariable>
+        <Name>oauth_external_authorization_status</Name>
+        <Value>true</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>flow.expires_in_token</Name>
+        <!-- set the expires in and multiply * 1000 (result in ms) -->
+        <Template>{flow.expires_in}000</Template>
+    </AssignVariable>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

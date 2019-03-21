@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="ServiceCalloutGetAccessToken">
+    <DisplayName>ServiceCallout.GetAccessToken</DisplayName>
+    <Properties/>
+    <Request clearPayload="true" variable="myRequest">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Headers>
+                <Header name="authorization">{request.header.authorization}</Header>
+            </Headers>
+            <FormParams>
+                <FormParam name="grant_type">client_credentials</FormParam>
+            </FormParams>
+        </Set>
+    </Request>
+    <Response>flow.idp.response</Response>
+    <HTTPTargetConnection>
+        <LoadBalancer>
+            <Server name="idp.laposte"/>
+        </LoadBalancer>
+        <Path>/token</Path>
+    </HTTPTargetConnection>
+</ServiceCallout>

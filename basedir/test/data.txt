@@ -1,0 +1,7 @@
+node ./node_modules/cucumber/bin/cucumber-js --world-parameters '{"scheme": "https","domain": "emea-poc8-test.apigee.net/v2/stockquote","accesstoken": "Bearer 1a59678f-c5ef-36fc-88fa-05126e482aeb"}' --format ./node_modules/cucumber-pretty
+
+
+
+ab -n 11 -c 1 -H 'authorization: Bearer ###' 'https://emea-poc8-test.apigee.net/v2/stockquote/all'
+
+ab -n 11 -c 1 'https://emea-poc8-test.apigee.net/v1/stockquote/all'

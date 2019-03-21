@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="2" name="oauth20-LaPoste">
+    <Basepaths>/v1/token</Basepaths>
+    <ConfigurationVersion majorVersion="4" minorVersion="0"/>
+    <CreatedAt>1552949097718</CreatedAt>
+    <CreatedBy>defaultUser</CreatedBy>
+    <Description></Description>
+    <DisplayName>oauth20-LaPoste</DisplayName>
+    <LastModifiedAt>1553097116505</LastModifiedAt>
+    <LastModifiedBy>defaultUser</LastModifiedBy>
+    <ManifestVersion>SHA-512:161db73782d577f2c76e41df622f2b8b8b755e573b4ebd7bad9ce3ceaf64520375ae445c2dd7773b7be7895c27fee768b05d10c26aa30f881c7d5cab26bfbd41</ManifestVersion>
+    <Policies>
+        <Policy>Add-CORS</Policy>
+        <Policy>AssignMessageSetOAuthExternalAuthorizationStatus</Policy>
+        <Policy>ExtractVariablesAccessToken</Policy>
+        <Policy>JavaScript-SetTokenType</Policy>
+        <Policy>OAuthv20GenerateAccessToken</Policy>
+        <Policy>ServiceCalloutGetAccessToken</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://JavaScript-SetTokenType.js</Resource>
+    </Resources>
+    <Spec></Spec>
+    <TargetServers/>
+    <TargetEndpoints/>
+</APIProxy>

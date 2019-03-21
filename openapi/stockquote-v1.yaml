@@ -1,0 +1,61 @@
+swagger: "2.0"
+info:
+  title: StockQuote API
+  version: 1.0.0
+  description: Stock Quote API
+
+schemes:
+  - https
+
+securityDefinitions:
+  apiKeyInHeader:
+    type: apiKey
+    in: header
+    name: x-apikey
+
+host: emea-poc8-test.apigee.net
+
+basePath: /v1/stockquote
+
+paths:
+  /{symbol}:
+    get:
+      description: returns stock quote for GAFAM
+      parameters:
+        - name: symbol
+          in: path
+          required: true
+          type: string
+          
+      security:
+        - apiKeyInHeader: []
+        
+      responses:
+        200:
+          description: response OK
+          schema:
+            $ref: "#/definitions/stockQuotes"
+          
+definitions:
+  stockQuotes:
+    type: object
+    properties:
+      stocks:
+        type: array
+        description: stock quote information
+        items:
+          type: object
+          properties:
+            symbol:
+              type: string
+            name:
+              type: string
+            last:
+              type: number
+              format: float
+            low:
+              type: number
+              format: float
+            high:
+              type: number
+              format: float

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ExtractVariablesAccessToken">
+    <DisplayName>ExtractVariables.AccessToken</DisplayName>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <JSONPayload>
+        <Variable name="flow.externally-generated-token">
+            <JSONPath>$.access_token</JSONPath>
+        </Variable>
+        <Variable name="flow.scope">
+            <JSONPath>$.scope</JSONPath>
+        </Variable>
+        <Variable name="flow.expires_in">
+            <JSONPath>$.expires_in</JSONPath>
+        </Variable>
+    </JSONPayload>
+    <Source clearPayload="false">flow.idp.response</Source>
+</ExtractVariables>

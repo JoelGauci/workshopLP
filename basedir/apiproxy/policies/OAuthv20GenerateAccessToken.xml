@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OAuthv20GenerateAccessToken">
+    <DisplayName>OAuthv2.0.GenerateAccessToken</DisplayName>
+    <ExternalAccessToken>flow.externally-generated-token</ExternalAccessToken>
+    <ExternalAuthorization>false</ExternalAuthorization>
+    <Operation>GenerateAccessToken</Operation>
+    <GenerateResponse enabled="true"/>
+    <ExpiresIn ref="flow.expires_in_token">3600000</ExpiresIn>
+    <ReuseRefreshToken>false</ReuseRefreshToken>
+    <Scope>flow.scope</Scope>
+    <SupportedGrantTypes>
+        <GrantType>client_credentials</GrantType>
+    </SupportedGrantTypes>
+    <Tokens/>
+</OAuthV2>
